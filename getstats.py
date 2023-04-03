@@ -4,8 +4,8 @@ from nba_api.stats.endpoints import leaguedashteamstats, leaguestandings, common
 import time
 
 
-# This python script will create 3 .csv files in the current working directory
-# It will create 'nba-stats.csv', 'nba-standings.csv', and 'nba_rosters.csv'
+# This python script will create 3 json files in the current working directory
+# It will create 'nba-stats.json', 'nba-standings.json', and 'nba_rosters.json'
 # Built using 'nba_api' created by Swar Patel
 # https://github.com/swar/nba_api
 
@@ -44,7 +44,7 @@ team_rosters_df = pd.concat(rosters)
 team_standings = leaguestandings.LeagueStandings(season='2022-23')
 team_standings_df = team_standings.get_data_frames()[0]
 
-# Converting each dataframe into a .csv file and sending to current directory
+# Converting each dataframe into a .json file and sending to current directory
 team_stats_df.to_json('nba-stats.json', orient='records')
 team_standings_df.to_json('nba-standings.json', orient='records')
 team_rosters_df.to_json('nba-rosters.json', orient='records')
