@@ -9,6 +9,8 @@ import json
 # It will create 'nba-data.json'
 # Built using 'nba_api' created by Swar Patel
 # https://github.com/swar/nba_api
+# This script is running daily at midnight in a google cloud compute engine instance
+# The nba-data.json is then exported into the firebase realtime database for this project
 
 def get_data():
     sleep_timer = 0.600
